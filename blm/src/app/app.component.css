@@ -1,0 +1,29 @@
+#home-link
+{
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#home-link:focus
+{
+  outline:none !important;
+  box-shadow: none !important;
+}
+
+.logo
+{
+  z-index: 1;
+  position: absolute;
+  margin: 5px;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: url("/assets/images/BLM.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

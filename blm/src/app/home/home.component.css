@@ -1,0 +1,206 @@
+*, *:before, *:after
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#donate-link
+{
+  z-index: 1;
+  position: absolute;
+  padding: 10px;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hashtag-link
+{
+  z-index: 1;
+  position: absolute;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+}
+#hashtag-link .mat-button.mat-accent, .mat-icon-button.mat-accent, .mat-stroked-button.mat-accent
+{
+  color: #fce21b;
+}
+
+.btn-fold {
+  position: relative;
+  display: inline-block;
+  width: 30rem;
+  z-index: 1;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  -webkit-perspective-origin: 50% 200%;
+          perspective-origin: 50% 200%;
+  -webkit-transform: translateX(-25%) translateZ(0);
+          transform: translateX(-25%) translateZ(0);
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.btn-fold span {
+  position: relative;
+  display: block;
+  width: 50%;
+  float: left;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  text-align: right;
+}
+.btn-fold span:last-child {
+  z-index: 2;
+  padding-right: 1rem;
+  padding-left: .6rem;
+  text-align: left;
+  background-color: #fce21b;
+}
+.btn-fold span:first-child {
+  z-index: 3;
+  padding-right: .6rem;
+  padding-left: 1rem;
+  pointer-events: none;
+  background-color: #fce21b;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(179.9deg);
+          transform: rotateY(179.9deg);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.btn-fold span:first-child:before {
+  content: 'Donate';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 1.5rem;
+  z-index: 4;
+  color: white;
+  text-align: center;
+  background-color: #4a44f2;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: color 0s 0.2s, background-color 0s 0.2s;
+  transition: color 0s 0.2s, background-color 0s 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+.btn-fold:hover {
+  -webkit-transform: translateX(0) translateZ(0);
+          transform: translateX(0) translateZ(0);
+}
+.btn-fold:hover > span:first-child {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+.btn-fold:hover > span:first-child:before {
+  color: transparent;
+  background-color: transparent;
+}
+
+.btn-fold-1 {
+  position: relative;
+  display: inline-block;
+  width: 28rem;
+  z-index: 1;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+  -webkit-perspective-origin: 50% 200%;
+          perspective-origin: 50% 200%;
+  -webkit-transform: translateX(-25%) translateZ(0);
+          transform: translateX(-25%) translateZ(0);
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.btn-fold-1 span {
+  position: relative;
+  display: block;
+  width: 50%;
+  float: left;
+  padding-top: 1rem;
+  padding-bottom: .7rem;
+  text-align: right;
+}
+.btn-fold-1 span:last-child {
+  z-index: 2;
+  padding-right: 1rem;
+  padding-left: .6rem;
+  text-align: left;
+  background-color: #fae900;
+}
+.btn-fold-1 span:first-child {
+  z-index: 3;
+  padding-right: .6rem;
+  padding-left: 1rem;
+  pointer-events: none;
+  background-color: #fae900;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+  -webkit-transform: rotateY(179.9deg);
+          transform: rotateY(179.9deg);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+.btn-fold-1 span:first-child:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 1rem;
+  z-index: 4;
+  color: white;
+  text-align: center;
+  background-color: #0079c2;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: color 0s 0.2s, background-color 0s 0.2s;
+  transition: color 0s 0.2s, background-color 0s 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+.btn-fold-1:hover {
+  -webkit-transform: translateX(0) translateZ(0);
+          transform: translateX(0) translateZ(0);
+}
+.btn-fold-1:hover > span:first-child {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+.btn-fold-1:hover > span:first-child:before {
+  color: transparent;
+  background-color: transparent;
+}
