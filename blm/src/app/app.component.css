@@ -12,11 +12,20 @@
   box-shadow: none !important;
 }
 
+#app-version
+{
+  z-index: 1;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  right: 0;
+}
+
 .logo
 {
   z-index: 1;
   position: absolute;
-  margin: 5px;
+  margin: 10px;
   top: 0;
   left: 0;
   width: 28px;

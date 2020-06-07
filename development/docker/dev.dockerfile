@@ -19,7 +19,7 @@ RUN apk add --no-cache \
   bash \
   git \
   vim
-RUN npm install -g @angular/cli@9.1.5
+RUN npm i -g @angular/cli@9.1.5
 RUN npm i -s @angular/flex-layout@9.0.0-beta.31 @angular/cdk@~9.2.1
 
 # Init project

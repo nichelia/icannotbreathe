@@ -19,7 +19,7 @@ RUN apk add --no-cache \
   bash \
   git \
   vim
-RUN npm install -g @angular/cli@9.1.5
+RUN npm i -g @angular/cli@9.1.5
 RUN npm i -s @angular/flex-layout@9.0.0-beta.31 @angular/cdk@~9.2.1
 
 # Init project
@@ -43,7 +43,7 @@ ENV APP_DIR="${DEV_DIR}/blacklivesmatternow.info/blm/"
 RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
 
-RUN npm install express --save
+RUN npm i -s express
 
 COPY --from=compile-image /usr/src/blacklivesmatternow.info/blm/dist /usr/src/blacklivesmatternow.info/blm/dist
 COPY --from=compile-image /usr/src/blacklivesmatternow.info/blm/server.js /usr/src/blacklivesmatternow.info/blm/server.js
