@@ -1,6 +1,11 @@
 <div class="container">
-  <div #countdown class="countdown" id="countdown">
-    <div #ticker class="countdown__fill" id="ticker"></div>
-    <div #display class="countdown__digit" id="display">00</div>
+  <div #ticker class="animation" id="ticker"></div>
+  <div id="display" fxLayout="column" fxFlexFill>
+    <div class="maindisplay" id="maindisplay" fxLayout="row" fxLayoutAlign="center center" fxFlex="50">
+      <span #maindisplay></span>
+    </div>
+    <div class="seconddisplay" id="seconddisplay" fxLayout="row" fxLayoutAlign="center center" fxFlex="50">
+      <span #seconddisplay></span>
+    </div>
   </div>
 </div>

@@ -1,44 +1,70 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import * as Story from './story.json';
 
 @Component({
   selector: 'app-georgefloyd',
   templateUrl: './georgefloyd.component.html',
   styleUrls: ['./georgefloyd.component.css']
 })
-export class GeorgefloydComponent implements AfterViewInit
+export class GeorgefloydComponent implements OnInit, AfterViewInit
 {
 
-  @ViewChild('countdown', {read: ElementRef, static:false}) countdownElementView: ElementRef;
   @ViewChild('ticker', {read: ElementRef, static:false}) tickerElementView: ElementRef;
-  @ViewChild('display', {read: ElementRef, static:false}) displayElementView: ElementRef;
-  private countdown = null;
-  private ticker = null;
-  private display = null;
+  @ViewChild('maindisplay', {read: ElementRef, static:false}) mainDisplayElementView: ElementRef;
+  @ViewChild('seconddisplay', {read: ElementRef, static:false}) secondDisplayElementView: ElementRef;
+  private ticker: any = null;
+  private mainDisplay: any = null;
+  private secondDisplay: any = null;
   private duration: number = 0;
   private remainingDuration: number = 0;
   private message: string = "";
-  private start = null;
+  private start: number = null;
   private running: boolean = false;
-  private renderer = null;
+  private renderer: any = null;
+  private story: string[] = [];
 
   constructor() { }
 
+  ngOnInit(): void { }
+
   ngAfterViewInit(): void
   {
-    const duration_in_milliseconds = 526000; // = 8.46 minutes
-    const end_message = "RIP";
-    this.init(duration_in_milliseconds, end_message);
+    const duration_in_milliseconds: number = 526000; // = 8.46 minutes
+    const end_message = "R.I.P";
+    const story = Story["default"];
+    this.init(duration_in_milliseconds, end_message, story);
     this.start_countdown();
+    this.start_story();
   }
 
-  private init(duration_in_milliseconds, end_message)
+  private init(duration_in_milliseconds: number, end_message: string, story: string[]): void
   {
-    this.countdown = this.countdownElementView.nativeElement;
     this.ticker = this.tickerElementView.nativeElement;
-    this.display = this.displayElementView.nativeElement;
+    this.mainDisplay = this.mainDisplayElementView.nativeElement;
+    this.secondDisplay = this.secondDisplayElementView.nativeElement;
     this.duration = duration_in_milliseconds;
     this.message = end_message;
+    this.story = story;
     this.running = false;
+  }
+
+  private start_story(): void
+  {
+    const interval = this.duration / this.story.length;
+    let storyPart = 0;
+
+    const plot = () =>
+    {
+      if (storyPart === this.story.length)
+      {
+        clearInterval(storyTeller);
+        return;
+      }
+      this.secondDisplay.textContent = this.story[storyPart];
+      storyPart++;
+    }
+
+    const storyTeller = setInterval(plot, interval);
   }
 
   private start_countdown(): void
@@ -46,7 +72,7 @@ export class GeorgefloydComponent implements AfterViewInit
     this.start = null;
     this.running = true;
     this.remainingDuration = this.duration;
-    this.display.textContent = this.msToTime(this.duration);
+    this.mainDisplay.textContent = this.msToTime(this.duration);
     this.renderer = requestAnimationFrame(this.render.bind(this));
   }
 
@@ -57,10 +83,10 @@ export class GeorgefloydComponent implements AfterViewInit
     {
       cancelAnimationFrame(this.renderer);
     }
-    this.display.textContent = this.message;
+    this.mainDisplay.textContent = this.message;
   }
 
-  private render(now)
+  private render(now: number): void
   {
     if (!this.start)
     {
@@ -75,7 +101,7 @@ export class GeorgefloydComponent implements AfterViewInit
 
       if (newDuration != this.remainingDuration)
       {
-        this.display.textContent = this.msToTime(newDuration);
+        this.mainDisplay.textContent = this.msToTime(newDuration);
 				this.remainingDuration = newDuration;
       }
 
@@ -88,7 +114,7 @@ export class GeorgefloydComponent implements AfterViewInit
     }
   }
 
-  private msToTime(duration_in_milliseconds): string
+  private msToTime(duration_in_milliseconds: number): string
   {
     const seconds = Math.floor((duration_in_milliseconds / 1000) % 60),
     minutes = Math.floor((duration_in_milliseconds / (1000 * 60)) % 60),

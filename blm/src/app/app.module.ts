@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { GeorgefloydComponent } from './georgefloyd/georgefloyd.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatButtonModule,
   ],
   providers: [],

@@ -36,7 +36,6 @@ docker run --rm -it \
   -v "${PWD}/blm/angular.json":/usr/src/blacklivesmatternow.info/blm/angular.json \
   -v "${PWD}/blm/browserslist":/usr/src/blacklivesmatternow.info/blm/browserslist \
   -v "${PWD}/blm/karma.conf.js":/usr/src/blacklivesmatternow.info/blm/karma.conf.js \
-  -v "${PWD}/blm/package-lock.json":/usr/src/blacklivesmatternow.info/blm/package-lock.json \
   -v "${PWD}/blm/package.json":/usr/src/blacklivesmatternow.info/blm/package.json \
   -v "${PWD}/blm/README.md":/usr/src/blacklivesmatternow.info/blm/README.md \
   -v "${PWD}/blm/tsconfig.app.json":/usr/src/blacklivesmatternow.info/blm/tsconfig.app.json \
