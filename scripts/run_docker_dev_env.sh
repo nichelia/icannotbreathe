@@ -27,6 +27,7 @@ if [[ "$(docker images -q ${DOCKER_IMAGE_TAG} 2> /dev/null)" == "" ]]; then
   docker build -f ./development/docker/dev.dockerfile -t "${DOCKER_IMAGE_TAG}" ./blm
 fi
 
+echo -e "${green}Running docker image: \"${DOCKER_IMAGE_TAG}\" in dev mode...${no_color}"
 docker run --rm -it \
   --name blm-dev \
   -v "${PWD}/blm/e2e":/usr/src/blacklivesmatternow.info/blm/e2e \
