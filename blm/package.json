@@ -1,6 +1,6 @@
 {
   "name": "blm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "node src/version.ts"
+    "version": "node src/version.ts"
   },
   "private": true,
   "dependencies": {
