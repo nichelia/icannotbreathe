@@ -5,7 +5,7 @@ MAINTAINER Nicholas Elia <me@nichelia.com>
 # Environment variables
 ENV REFRESHED_AT 2020-06-08
 ENV DEV_DIR="/usr/src"
-ENV APP_DIR="${DEV_DIR}/blacklivesmatternow.info/blm/"
+ENV APP_DIR="${DEV_DIR}/icannotbreathe/blm/"
 ENV USER="node"
 
 # Set working directory

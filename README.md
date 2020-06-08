@@ -1,6 +1,5 @@
-# blacklivesmatternow.info
-blacklivesmatternow.info: Black lives matter - Dedicated to the memory of George Floyd
-
+# icannotbreathe
+I cannot breathe: A site dedicated to the memory of George Floyd
 
 ## Contents
 

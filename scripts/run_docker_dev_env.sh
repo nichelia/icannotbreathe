@@ -37,7 +37,7 @@ echo -e "${green}Running docker image: \"${DOCKER_DEV_IMAGE_TAG}\" in dev mode..
 docker volume create blm-node-modules
 docker run --rm -it \
   --name blm-dev \
-  -v "${PWD}/blm":/usr/src/blacklivesmatternow.info/blm/ \
-  -v blm-node-modules:/usr/src/blacklivesmatternow.info/blm/node_modules \
+  -v "${PWD}/blm":/usr/src/icannotbreathe/blm/ \
+  -v blm-node-modules:/usr/src/icannotbreathe/blm/node_modules \
   -p 4200:4200 \
-  nichelia/blacklivesmatternow.info:dev "$@"
+  "${DOCKER_DEV_IMAGE_TAG}" "$@"
