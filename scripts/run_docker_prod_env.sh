@@ -19,15 +19,21 @@ red="\033[91m"
 # shellcheck disable=SC2034
 no_color="\033[0m"
 
+source ./scripts/docker_env.env
 
-DOCKER_IMAGE_TAG="nichelia/blacklivesmatternow.info:prod"
-if [[ "$(docker images -q ${DOCKER_IMAGE_TAG} 2> /dev/null)" == "" ]]; then
-  echo -e "${red}Custom docker image \"${DOCKER_IMAGE_TAG}\" not found.${no_color}"
-  echo -e "${green}Building docker image: \"${DOCKER_IMAGE_TAG}\"...${no_color}"
-  docker build -f ./deployment/docker/prod.dockerfile -t "${DOCKER_IMAGE_TAG}" ./blm
+if [[ "$(docker images -q ${DOCKER_BASE_IMAGE_TAG} 2> /dev/null)" == "" ]]; then
+  echo -e "${red}Docker image \"${DOCKER_BASE_IMAGE_TAG}\" not found.${no_color}"
+  echo -e "${green}Building docker image: \"${DOCKER_BASE_IMAGE_TAG}\"...${no_color}"
+  docker build -f ./docker/base.dockerfile -t "${DOCKER_BASE_IMAGE_TAG}" ./blm
 fi
 
-echo -e "${green}Running docker image: \"${DOCKER_IMAGE_TAG}\" in prod mode...${no_color}"
+if [[ "$(docker images -q ${DOCKER_PROD_IMAGE_TAG} 2> /dev/null)" == "" ]]; then
+  echo -e "${red}Docker image \"${DOCKER_PROD_IMAGE_TAG}\" not found.${no_color}"
+  echo -e "${green}Building docker image: \"${DOCKER_PROD_IMAGE_TAG}\"...${no_color}"
+  docker build -f ./docker/prod.dockerfile -t "${DOCKER_PROD_IMAGE_TAG}" ./blm
+fi
+
+echo -e "${green}Running docker image: \"${DOCKER_PROD_IMAGE_TAG}\" in prod mode...${no_color}"
 docker run --rm -it \
   --name blm-prod \
   -p 8080:8080 \
