@@ -37,4 +37,4 @@ echo -e "${green}Running docker image: \"${DOCKER_PROD_IMAGE_TAG}\" in prod mode
 docker run --rm -it \
   --name blm-prod \
   -p 8080:8080 \
-  nichelia/blacklivesmatternow.info:prod
+  "${DOCKER_PROD_IMAGE_TAG}"

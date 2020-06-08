@@ -1,4 +1,4 @@
-FROM nichelia/blacklivesmatternow.info:base AS compile-image
+FROM nichelia/icannotbreathe:base AS compile-image
 
 # Copy needed files
 COPY --chown=${USER}:${USER} . ${APP_DIR}
@@ -14,7 +14,7 @@ MAINTAINER Nicholas Elia <me@nichelia.com>
 # Environment variables
 ENV REFRESHED_AT 2020-06-08
 ENV DEV_DIR="/usr/src"
-ENV APP_DIR="${DEV_DIR}/blacklivesmatternow.info/blm/"
+ENV APP_DIR="${DEV_DIR}/icannotbreathe/blm/"
 ENV USER="nobody"
 
 # Set working directory
@@ -26,8 +26,8 @@ WORKDIR ${APP_DIR}
 RUN npm i -s express
 
 # Copy needed files
-COPY --chown=${USER}:${USER} --from=compile-image /usr/src/blacklivesmatternow.info/blm/dist /usr/src/blacklivesmatternow.info/blm/dist
-COPY --chown=${USER}:${USER} --from=compile-image /usr/src/blacklivesmatternow.info/blm/server.js /usr/src/blacklivesmatternow.info/blm/server.js
+COPY --chown=${USER}:${USER} --from=compile-image /usr/src/icannotbreathe/blm/dist /usr/src/icannotbreathe/blm/dist
+COPY --chown=${USER}:${USER} --from=compile-image /usr/src/icannotbreathe/blm/server.js /usr/src/icannotbreathe/blm/server.js
 
 # Switch Non-root user
 USER ${USER}
