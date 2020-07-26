@@ -7,6 +7,10 @@ MODULE=blm
 env:
 	./scripts/helpers/environment.sh -f
 
+.PHONY: env-docker
+env-docker:
+	./scripts/helpers/environment.sh -d
+
 .PHONY: env-prod
 env-prod:
 	./scripts/helpers/environment.sh -p
@@ -16,7 +20,7 @@ env-update:
 	./scripts/helpers/environment.sh -u
 
 ### Docker ###
-.PHONY: build-docker-test
+.PHONY: build-docker-local
 build-docker-local:
 	./scripts/build_docker_image.sh -t
 
@@ -29,6 +33,11 @@ build-docker:
 run:
 	./scripts/run.sh
 
+.PHONY: run-docker
+run-docker:
+	./scripts/run.sh -d
+
+.PHONY: run-prod
 run-prod:
 	./scripts/run.sh -p
 

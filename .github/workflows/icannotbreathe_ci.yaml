@@ -58,10 +58,7 @@ jobs:
             node-npm-${{ runner.os }}-
       - name: Test
         shell: bash -l {0}
-        run: cd blm && ng test
-      - name: Test coverage
-        shell: bash -l {0}
-        run: cd blm && ng test --no-watch --code-coverage
+        run: cd blm && ng test --no-watch --code-coverage --source-map true
       - name: Upload coverage report to CodeCov
         uses: codecov/codecov-action@v1
 
