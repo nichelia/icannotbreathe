@@ -6,7 +6,7 @@ I cannot breathe: A site dedicated to the memory of George Floyd
 
 ## Development
 To run project in development mode, run the following:  
-`$ ./scripts/run_docker_dev_env.sh`
+`$ ./scripts/run.sh`
 
 ## Replicate
 This project uses npm package `@angular/cli` of version `v9.1.5`.

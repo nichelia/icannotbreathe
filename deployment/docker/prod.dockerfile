@@ -9,7 +9,7 @@ RUN ng build --prod
 
 FROM node:alpine AS build-image
 
-MAINTAINER Nicholas Elia <me@nichelia.com>
+LABEL maintainer="Nicholas Elia <me@nichelia.com>"
 
 # Environment variables
 ENV REFRESHED_AT 2020-06-08

@@ -1,6 +1,6 @@
 FROM node:alpine
 
-MAINTAINER Nicholas Elia <me@nichelia.com>
+LABEL maintainer="Nicholas Elia <me@nichelia.com>"
 
 # Environment variables
 ENV REFRESHED_AT 2020-06-08
@@ -22,9 +22,9 @@ RUN apk add --no-cache \
 # Install node dependencies
 COPY package*.json ${APP_DIR}
 RUN npm i -g @angular/cli@9.1.5
-RUN npm i -s @angular/flex-layout@9.0.0-beta.31 @angular/cdk@~9.2.1
 RUN cd $APP_DIR && \
-    npm install
+    npm install && \
+    ng update
 
 # Switch Non-root user
 USER ${USER}
